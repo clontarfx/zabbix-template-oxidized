@@ -2,9 +2,11 @@
 A quick template to monitor Oxidized in Zabbix, including required Oxidized hooks. No value maps, I've left that up to your imagination. It will capture relevant hooks for polling devices, as well as push a 0 or 1 status for the last poll, and the time of the poll.
 
 ## Prerequisites
-zabbix
-zabbix_sender
-oxidized
+* zabbix
+* zabbix_sender
+* oxidized
+* date
+* A relatively recent shell capable of in-line exports
 
 ## Oxidized Hooks
 Add these hooks to your hook: section (remember that it's YAML, so watch your spaces and indentation).
