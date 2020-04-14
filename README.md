@@ -1,5 +1,5 @@
 # zabbix-template-oxidized
-A quick template to monitor Oxidized in Zabbix, including required Oxidized hooks. No value maps, I've left that up to your imagination. It will capture relevant hooks for polling devices, as well as push a 0 or 1 status for the last poll, and the time of the poll. make sure you change the value of $ZBX_SERVER to your Zabbix Server or Proxy.
+A quick template to monitor Oxidized in Zabbix, including required Oxidized hooks. No value maps, I've left that up to your imagination. It will capture relevant hooks for polling devices, as well as push a 0 or 1 status for the last poll, and the time of the poll. Make sure you change the value of $ZBX_SERVER to your Zabbix Server or Proxy.
 
 ## Prerequisites
 * zabbix
