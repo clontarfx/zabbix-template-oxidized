@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.4</version>
-    <date>2020-04-14T03:48:29Z</date>
+    <date>2020-04-14T04:45:53Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -58,9 +58,9 @@
                     </applications>
                     <triggers>
                         <trigger>
-                            <expression>{last()}=1</expression>
+                            <expression>{last()}&lt;&gt;1</expression>
                             <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
-                            <recovery_expression>{last()}=0</recovery_expression>
+                            <recovery_expression>{last()}=1</recovery_expression>
                             <name>Oxidized Backup Failed</name>
                             <priority>AVERAGE</priority>
                             <description>Oxidized has reported that the backup for {HOST.NAME} ({HOST.IP}) has failed. The last failure reason was {{HOST.HOST}:OX_REASON.last()}.</description>
