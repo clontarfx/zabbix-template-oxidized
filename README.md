@@ -35,4 +35,4 @@ I've pre-indented this code block for your convenience, but you're responsible f
     zabbix_sender -z 8615VZX001.cewa.edu.au -s $OX_NODE_IP -k OX_NODE_MODEL  -o $OX_NODE_MODEL;
     zabbix_sender -z 8615VZX001.cewa.edu.au -s $OX_NODE_IP -k OX_NODE_NAME   -o $OX_NODE_NAME;
     zabbix_sender -z 8615VZX001.cewa.edu.au -s $OX_NODE_IP -k oxidized.datetime -o $EPOCHTIME;
-    zabbix_sender -z 8615VZX001.cewa.edu.au -s $OX_NODE_IP -k oxidized.status -o 0'```
+    zabbix_sender -z 8615VZX001.cewa.edu.au -s $OX_NODE_IP -k oxidized.status -o 0'
