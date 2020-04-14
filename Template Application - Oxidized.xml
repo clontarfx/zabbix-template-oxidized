@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>4.4</version>
+    <date>2020-04-14T03:21:13Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template Application - Oxidized</template>
+            <name>Template Application - Oxidized</name>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Oxidized Backup Status</name>
+                </application>
+                <application>
+                    <name>Oxidized Information</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Backup Time</name>
+                    <type>TRAP</type>
+                    <key>oxidized.datetime</key>
+                    <delay>0</delay>
+                    <units>unixtime</units>
+                    <applications>
+                        <application>
+                            <name>Oxidized Backup Status</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Backup Status</name>
+                    <type>TRAP</type>
+                    <key>oxidized.status</key>
+                    <delay>0</delay>
+                    <applications>
+                        <application>
+                            <name>Oxidized Backup Status</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Event</name>
+                    <type>TRAP</type>
+                    <key>OX_EVENT</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>Oxidized Information</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Job Status</name>
+                    <type>TRAP</type>
+                    <key>OX_JOB_STATUS</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>Oxidized Information</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Job Runtime</name>
+                    <type>TRAP</type>
+                    <key>OX_JOB_TIME</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <units>s</units>
+                    <applications>
+                        <application>
+                            <name>Oxidized Information</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Node IP</name>
+                    <type>TRAP</type>
+                    <key>OX_NODE_IP</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>Oxidized Information</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Node Model</name>
+                    <type>TRAP</type>
+                    <key>OX_NODE_MODEL</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>Oxidized Information</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Node Name</name>
+                    <type>TRAP</type>
+                    <key>OX_NODE_NAME</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>Oxidized Information</name>
+                        </application>
+                    </applications>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>
