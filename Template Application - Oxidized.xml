@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.4</version>
-    <date>2020-04-14T03:21:13Z</date>
+    <date>2020-04-14T03:48:29Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -11,6 +11,7 @@
         <template>
             <template>Template Application - Oxidized</template>
             <name>Template Application - Oxidized</name>
+            <description>This template allows traps to be sent to Zabbix using Oxidized Hooks. See https://github.com/clontarfx/zabbix-template-oxidized for more information.</description>
             <groups>
                 <group>
                     <name>Templates</name>
@@ -36,6 +37,14 @@
                             <name>Oxidized Backup Status</name>
                         </application>
                     </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>({now()}-{last()})&gt;={$OXIDIZED_AGE_WARNING}</expression>
+                            <name>Oxidized Missing Backups for {HOST.NAME}</name>
+                            <priority>HIGH</priority>
+                            <description>Oxidized has not backed up {HOST.NAME} ({HOST.IP}) in more than {$OXIDIZED_AGE_WARNING}.</description>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
                     <name>Backup Status</name>
@@ -47,6 +56,16 @@
                             <name>Oxidized Backup Status</name>
                         </application>
                     </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=1</expression>
+                            <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
+                            <recovery_expression>{last()}=0</recovery_expression>
+                            <name>Oxidized Backup Failed</name>
+                            <priority>AVERAGE</priority>
+                            <description>Oxidized has reported that the backup for {HOST.NAME} ({HOST.IP}) has failed. The last failure reason was {{HOST.HOST}:OX_REASON.last()}.</description>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
                     <name>Event</name>
@@ -86,6 +105,16 @@
                             <name>Oxidized Information</name>
                         </application>
                     </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;{$OXIDIZED_RUNTIME_SLOW}</expression>
+                            <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
+                            <recovery_expression>{last()}&lt;{$OXIDIZED_RUNTIME_SLOW}</recovery_expression>
+                            <name>Oxidized Run Time Slow</name>
+                            <priority>INFO</priority>
+                            <description>Oxidized has reported that the backup for {HOST.NAME} ({HOST.IP}) took longer than {$OXIDIZED_RUNTIME_SLOW}.</description>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
                     <name>Node IP</name>
@@ -127,6 +156,16 @@
                     </applications>
                 </item>
             </items>
+            <macros>
+                <macro>
+                    <macro>{$OXIDIZED_AGE_WARNING}</macro>
+                    <value>24h</value>
+                </macro>
+                <macro>
+                    <macro>{$OXIDIZED_RUNTIME_SLOW}</macro>
+                    <value>60</value>
+                </macro>
+            </macros>
         </template>
     </templates>
 </zabbix_export>
