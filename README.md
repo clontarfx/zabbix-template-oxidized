@@ -28,11 +28,11 @@ I've pre-indented this code block for your convenience, but you're responsible f
     type: exec
     events: [node_fail]
     cmd: 'EPOCHTIME=`date +%s`; $ZBX_SERVER=CHANGEME;
-    zabbix_sender -z 8615VZX001.cewa.edu.au -s $OX_NODE_IP -k OX_EVENT       -o $OX_EVENT;
-    zabbix_sender -z 8615VZX001.cewa.edu.au -s $OX_NODE_IP -k OX_JOB_STATUS  -o $OX_JOB_STATUS;
-    zabbix_sender -z 8615VZX001.cewa.edu.au -s $OX_NODE_IP -k OX_JOB_TIME    -o $OX_JOB_TIME;
-    zabbix_sender -z 8615VZX001.cewa.edu.au -s $OX_NODE_IP -k OX_NODE_IP     -o $OX_NODE_IP;
-    zabbix_sender -z 8615VZX001.cewa.edu.au -s $OX_NODE_IP -k OX_NODE_MODEL  -o $OX_NODE_MODEL;
-    zabbix_sender -z 8615VZX001.cewa.edu.au -s $OX_NODE_IP -k OX_NODE_NAME   -o $OX_NODE_NAME;
-    zabbix_sender -z 8615VZX001.cewa.edu.au -s $OX_NODE_IP -k oxidized.datetime -o $EPOCHTIME;
-    zabbix_sender -z 8615VZX001.cewa.edu.au -s $OX_NODE_IP -k oxidized.status -o 0'
+    zabbix_sender -z $ZBX_SERVER -s $OX_NODE_IP -k OX_EVENT       -o $OX_EVENT;
+    zabbix_sender -z $ZBX_SERVER -s $OX_NODE_IP -k OX_JOB_STATUS  -o $OX_JOB_STATUS;
+    zabbix_sender -z $ZBX_SERVER -s $OX_NODE_IP -k OX_JOB_TIME    -o $OX_JOB_TIME;
+    zabbix_sender -z $ZBX_SERVER -s $OX_NODE_IP -k OX_NODE_IP     -o $OX_NODE_IP;
+    zabbix_sender -z $ZBX_SERVER -s $OX_NODE_IP -k OX_NODE_MODEL  -o $OX_NODE_MODEL;
+    zabbix_sender -z $ZBX_SERVER -s $OX_NODE_IP -k OX_NODE_NAME   -o $OX_NODE_NAME;
+    zabbix_sender -z $ZBX_SERVER -s $OX_NODE_IP -k oxidized.datetime -o $EPOCHTIME;
+    zabbix_sender -z $ZBX_SERVER -s $OX_NODE_IP -k oxidized.status -o 0'
